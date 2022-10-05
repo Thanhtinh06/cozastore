@@ -164,4 +164,4 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-CSRF_FAILURE_VIEW = 'cozastore.views.csrf_failure'
+# CSRF_FAILURE_VIEW = 'cozastore.views.csrf_failure'
