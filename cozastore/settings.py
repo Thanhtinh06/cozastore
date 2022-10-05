@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+7-l(2-%3c=(9ys#_cch28!mc-s47624$t&k=+-psz*0xg_b5x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cozastore-thanhtinh.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -87,6 +87,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'root',
+        'PASSWORD': '123456789',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -157,5 +161,5 @@ CART_SESSION_ID = 'cart'
 # Phan trang
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5,
+    'PAGE_SIZE': 10,
 }
