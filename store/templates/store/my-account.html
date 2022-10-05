@@ -1,0 +1,242 @@
+{% extends 'store/_Master.html' %} {% load static %} {% block main_content %} 
+{% load humanize%}  
+
+<title> {% block title_tab %} Coza Store | My Account {% endblock %} </title>         
+      	<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="{%url 'store:index'%}" class="stext-109 cl8 hov-cl1 trans-04">
+				Home
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				My account
+			</span>
+		</div>
+	</div>
+        <br>
+        <!-- Breadcrumb End -->
+        
+        <!-- My Account Start -->
+        <div class="my-account">
+            <div class="container-fluid">
+                <div class="row">
+                    {% comment %} <div class="col-md-3">
+                        <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                            <a class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn2 p-lr-15 trans-04" id="account-nav" data-toggle="pill" href="#account-tab" role="tab"><i class="fa fa-user"></i>Account Details</a>
+                            <br>
+                            <a class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn2 p-lr-15 trans-04" id="orders-nav" data-toggle="pill" href="#orders-tab" role="tab"><i class="fa fa-shopping-bag"></i>Orders</a>
+                        </div>
+                    </div> {% endcomment %}
+                    <div class="col-md-12 container">
+                        <div class = "tab-content">
+                            <div class="tab-pane fade show active" id="account-tab" role="tabpanel" aria-labelledby="account-nav">
+                                <h4 class="stext-101"> Account Details</h4>
+                                <br>
+                                <form method="post">
+                                    {% csrf_token %}
+
+                                    {% comment %} <div class="row mb-3">
+                                        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <img src="assets/img/profile-img.jpg" alt="Profile">
+                                          <div class="pt-2">
+                                            <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+                                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                          </div>
+                                        </div>
+                                      </div> {% endcomment %}
+
+                                      <div class=" row mb-3">
+                                       {{result_update_info|safe}}
+                                      </div>
+                  
+                                      <div class="row mb-3">
+                                        <label for="yourName" class="col-md-4 col-lg-3 col-form-label stext-104">Your Name</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="customer_name" type="text" class="form-control stext-104" id="yourName" value="{{ request.session.session_customer.customer_name }}">
+                                        </div>
+                                      </div>
+
+                                      <div class="row mb-3">
+                                        <label for="yourUsername" class="col-md-4 col-lg-3 col-form-label stext-104">Username</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="username" type="text" class="form-control stext-104" id="yourUsername" value="{{ request.session.session_customer.username }}">
+                                        </div>
+                                      </div>
+                  
+                  
+                                      <div class="row mb-3">
+                                        <label for="yourAddress" class="col-md-4 col-lg-3 col-form-label stext-104">Address</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="address" type="text" class="form-control stext-104" id="yourAddress" value="{{ request.session.session_customer.address }}">
+                                        </div>
+                                      </div>
+                  
+                                      <div class="row mb-3">
+                                        <label for="yourPhone" class="col-md-4 col-lg-3 col-form-label stext-104">Phone</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="tel" type="text" class="form-control stext-104" id="yourPhone" value="{{ request.session.session_customer.tel }}">
+                                        </div>
+                                      </div>
+                  
+                                      <div class="row mb-3">
+                                        <label for="yourEmail" class="col-md-4 col-lg-3 col-form-label stext-104">Email</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="email" type="email" class="form-control stext-104" id="yourEmail" readonly value="{{ request.session.session_customer.email }}">
+                                        </div>
+                                      </div>
+
+                                      <div class="text-center">
+                                        <button class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn2 p-lr-15 trans-04" name="btnUpdate" value="Update" style="min-width: 50px;
+                                        height: 30px;">Update Account</button>
+                                        <br><br>
+                                        </div>
+
+                                <h4 class="stext-101">Password change</h4>
+                                <br>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="col-md-12">
+                                        {{ result_change_password | safe}}
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label stext-104">Current Password</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="current_password" type="password" class="form-control stext-104" id="currentPassword" value={{current_password}}>
+                                        </div>
+                                      </div>
+                  
+                                      <div class="row mb-3">
+                                        <label for="newPassword" class="col-md-4 col-lg-3 col-form-label stext-104">New Password</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="new_password" type="password" class="form-control stext-104" id="newPassword" value="{{new_password}}">
+                                        </div>
+                                      </div>
+                  
+                                      <div class="row mb-3">
+                                        <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label stext-104">Confirm Password</label>
+                                        <div class="col-md-8 col-lg-9">
+                                          <input name="confirm_new_password" type="password" class="form-control stext-104" id="renewPassword" value="{{confirm_new_password}}">
+                                        </div>
+                                      </div>
+                  
+                                      <div class="text-center ">
+                                        <button type="submit" class="flex-c-m stext-101 cl0 bg1 bor1 hov-btn2 p-lr-15 trans-04 " name="btnChangePassword" value="Change" style="min-width: 50px;
+                                        height: 30px;">Change Password</button>
+                                      </div>
+                                </form>
+                                <br>
+                                <br>
+
+                            {% comment %} <div class="tab-pane fade active" id="orders-tab" role="tabpanel" aria-labelledby="orders-nav">
+                                  <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Code Order</th>
+                                                <th>Day Order</th>
+                                                <th>Total Payment</th>
+                                                <th>Status</th>
+                                                <th>View detail</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {%for order in all_order%} 
+                                            <tr>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>#{{order.id}}</td>
+                                                <td>{{order.created}}</td>
+                                                <td>{{order.total|floatformat:0|intcomma}}</td>
+                                                
+                                                <td>
+                                                    {%if order.status == 1 %}
+                                                    <span class="badge badge-success">Delivered</span>
+                                                    {%else%}
+                                                    <span class="badge badge-warning">Not delivery</span>
+                                                    {%endif%}
+                                                
+                                                </td>
+                                                <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#order{{order.id}}">View</button></td> 
+                                            </tr>
+                                           {%endfor%}
+                                        </tbody>
+                                    </table>
+
+                                    {%for order_id in list_id_order %}
+                
+                                        <div class="modal fade" id="order{{order_id}}" role="dialog" >
+                                            <div class="modal-dialog modal-xl">
+                                                <!-- Modal content-->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table table-bordered">
+                                                            <div> <span> #{{order_id}}</span> </div>
+                                                            <thead class="thead-dark">
+                                                                <tr>
+                                                                    <th>STT</th>
+                                                                    <th>Image</th>
+                                                                    <th>Product</th>
+                                                                    <th>Quantity</th>
+                                                                    <th>Price</th>
+                                                                    <th>Total</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                
+                                                                {%for detail in detail_order %}
+                                                                    {%for item in detail %}
+                                                                    {%if item.order_id == order_id%}
+                                                                    <tr>
+                                                                        <td>{{forloop.counter}}</td>
+                                                                        <td><img src="{{item.product.image.url}}" width="60px" height="60px"/></td>
+                                                                        <td>{{item.product.name}}</td>
+                                                                        <td>{{item.quantity}}</td>
+                                                                        <td>{{item.price|floatformat:0|intcomma}}</td>
+                                                                        <td>{{item.total_price|floatformat:0|intcomma}}</td>
+                                                                    </tr> 
+                                                                    {%endif%}
+                                                                    {%endfor%}
+                                                                {% endfor %}
+                                                                
+                                                            <tbody>
+                                                        </table>
+                                                        <table class="table table-bordered">
+                                                            <thead class="thead-dark">
+                                                                <tr>
+                                                                    <th > Total paymet</th>
+                                                                    {%for order in all_order%}
+                                                                    {%if order.id == order_id%}
+                                                                    <th>{{order.total|floatformat:0|intcomma}}</td>
+                                                                    {%endif%}
+                                                                    {%endfor%}
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div> 
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {%endfor%} {% endcomment %}
+
+                                </div>
+                            </div>                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- My Account End -->
+{% endblock %}
+        
+

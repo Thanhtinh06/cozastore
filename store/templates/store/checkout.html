@@ -1,0 +1,131 @@
+{% extends 'store/_Master.html' %}
+{% load static %}
+{% load humanize %}
+{% block title_tab %}CozaStore | Checkout{% endblock %}
+
+{% block main_content %}
+        
+    {% comment %} <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'store:index' %}"> Home</a></li>
+                <li class="breadcrumb-item active">Checkout</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb End --> {% endcomment %}
+    <br>
+    <br>
+
+    {% if cart|length > 0 %}
+    <div class="row">
+        <div class="col-lg-10 col-xl-7 m-lr-auto m-b-20">
+            <div class="m-l-25 m-r--38 m-lr-0-xl">
+                <div class="wrap-table-shopping-cart">
+                    <table class="table-shopping-cart">
+                        <tr class="table_head">
+                            {% comment %} <th class="column-1">No.</th> {% endcomment %}
+                            <th class="column-1" style="text-align: center">Image</th>
+                            <th class="column-2" style="text-align: center">Product</th>
+                            <th class="column-3" style="text-align: center">Price</th>
+                            <th class="column-4" style="text-align: center">Quantity</th>
+                            <th class="column-5" style="text-align: center">Total</th>
+                        </tr>
+
+                        {%for c in cart%}
+                        <tr class="table_row">
+                            {% comment %} <td> {{forloop.counter}}</td> {% endcomment %}
+                            <td class="column-1" style="text-align: center">
+                                <div class="how-itemcart1">
+                                    <img src="{{c.product.image.url}}" alt="{{c.product.name}}">
+                                </div>
+                            </td>
+                            <td class="column-2" style="text-align: center">{{c.product.name}}</td>
+                            <td class="column-3" style="text-align: center">{{c.price|floatformat:0|intcomma}}</td>
+                            <td class="column-4" style="text-align: center">{{c.quantity}}</td>
+                            <td class="column-5" style="text-align: center">{{c.total_price|floatformat:0|intcomma}}</td>
+                    
+                        {%endfor%}
+                    </table>
+                </div>
+                {% comment %} <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
+                    <div class="flex-w flex-m m-r-20 m-tb-5">
+
+                            <form method="post" >
+                                    {% csrf_token %}
+                            <div class="cart-btn">
+                                    <button type="submit" id="btnUpdateCart" name="btnUpdateCart" value="UpdateCart" class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10"> Update Cart</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+
+                <div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+						<h4 class="mtext-109 cl2 p-b-30">
+							Cart Totals
+						</h4>
+
+						<div class="flex-w flex-t bor12 p-b-13">
+							<div class="size-208">
+								<span class="stext-110 cl2">
+									Subtotal:
+								</span>
+							</div>
+
+							<div class="size-209">
+								<span class="mtext-110 cl2">
+									{{ cart.get_total_price|floatformat:0|intcomma }}
+								</span>
+							</div>
+						</div>
+
+						<div class="flex-w flex-t bor12 p-b-13">
+							<div class="size-208">
+								<span class="stext-110 cl2">
+									Discount:
+								</span>
+							</div>
+
+							<div class="size-209">
+								<span class="mtext-110 cl2">
+									{{ cart.get_discount|floatformat:0|intcomma }}
+								</span>
+							</div>
+						</div>
+
+
+						<div class="flex-w flex-t p-t-27 p-b-33">
+							<div class="size-208">
+								<span class="mtext-101 cl2">
+									Total:
+								</span>
+							</div>
+
+							<div class="size-209 p-t-1">
+								<span class="mtext-110 cl2">
+									{{ cart.get_final_total_price|floatformat:0|intcomma }}
+								</span>
+							</div>
+						</div>
+
+						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" type="button" onclick="window.location.href='{% url 'cart:cart_detail'%}';">Update Cart
+						</button>
+                        <br><br>
+                        <form method="post">
+                            {% csrf_token %}
+                        <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" onclick="window.location.href='{% url 'cart:checkout'%}';" type="submit" name="btnBuy" value="Buy">Order
+						</button>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+    {% else %}
+        <div> You don't have any products in your cart </div>
+    {%endif%}
+
+{% endblock %}

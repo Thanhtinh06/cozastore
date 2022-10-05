@@ -1,0 +1,495 @@
+{% extends 'store/_Master.html' %}
+{% load static %} 
+{% block main_content %}  
+{% load humanize %}          
+<title> {% block title_tab %} CozaStore | Home {% endblock %} </title>
+
+<!-- Slider -->
+<section class="section-slide">
+	<div class="wrap-slick1 rs2-slick1">
+		<div class="slick1">
+			<div class="item-slick1 bg-overlay1" style="background-image: url('{% static 'store/images/slide-05.jpg' %}');" data-thumb="{% static 'store/images/2021-L7-CK6-10680951-1-10-4.jpeg' %}" data-caption="New Wallet" >
+				<div class="container h-full">
+					<div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
+						<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+							<span class="ltext-202 txt-center cl0 respon2">
+								Women Collection 2022
+							</span>
+						</div>
+							
+						<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
+							<h2 class="ltext-104 txt-center cl0 p-t-22 p-b-40 respon1">
+								New arrivals
+							</h2>
+						</div>
+							
+						<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+							<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Shop Now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="item-slick1 bg-overlay1" style="background-image: url('{% static 'store/images/slide-main.jpeg' %}');" data-thumb="{% static 'store/images/2021-L2-CK2-80151021-1-13-4.jpeg' %}" data-caption="New Bags">
+				<div class="container h-full">
+					<div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
+						<div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
+							<span class="ltext-202 txt-center cl0 respon2">
+								New-Season
+							</span>
+						</div>
+							
+						<div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
+							<h2 class="ltext-104 txt-center cl0 p-t-22 p-b-40 respon1">
+								Shoes & Bags
+							</h2>
+						</div>
+							
+						<div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
+							<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Shop Now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-slick1 bg-overlay1" style="background-image: url('{% static 'store/images/slide-01.jpg'%}');" data-thumb="{% static 'store/images/2022-L6-CK1-90360369-01-2.jpeg' %}" data-caption="New Shoes">
+				<div class="container h-full">
+					<div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
+						<div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
+							<span class="ltext-202 txt-center cl0 respon2">
+								Best Collection 2022
+							</span>
+						</div>
+							
+						<div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
+							<h2 class="ltext-104 txt-center cl0 p-t-22 p-b-40 respon1">
+								NEW SEASON
+							</h2>
+						</div>
+							
+						<div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
+							<a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
+								Shop Now
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div> 
+		<div class="wrap-slick1-dots p-lr-10">
+
+		</div>
+	</div>
+</section>
+
+
+<!-- Banner -->
+<div class="sec-banner bg0 p-t-95 p-b-55">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 p-b-30 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="{% static 'store/images/banner-bags.jpeg' %}" alt="IMG-BANNER">
+
+					<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Bags
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								New Trend
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-6 p-b-30 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="{% static 'store/images/banner-shoes02.jpeg' %}" alt="IMG-BANNER">
+
+					<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Shoes
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								New Trend
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="{% static 'store/images/banner-wallet.jpeg' %}" alt="IMG-BANNER">
+					<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Wallets
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								Spring 2022
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="{% static 'store/images/banner-glasses.jpeg' %}" alt="IMG-BANNER">
+
+					<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Glasses
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								Spring 2022
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="{% static 'store/images/banner-accessories.jpeg' %}" alt="IMG-BANNER">
+
+					<a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Jewellery
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								Spring 2022
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- Product -->
+	<section class="bg0 p-t-23 p-b-130">
+		<div class="container">
+			<div class="p-b-10">
+				<h3 class="ltext-103 cl5">
+					Product Overview
+				</h3>
+			</div>
+
+			<div class="flex-w flex-sb-m p-b-52">
+				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.49 10.92C19.412 3.382 11.28-2.387 8 .986 4.719-2.387-3.413 3.382 7.51 10.92l-.234.468a.25.25 0 1 0 .448.224l.04-.08c.009.17.024.315.051.45.068.344.208.622.448 1.102l.013.028c.212.422.182.85.05 1.246-.135.402-.366.751-.534 1.003a.25.25 0 0 0 .416.278l.004-.007c.166-.248.431-.646.588-1.115.16-.479.212-1.051-.076-1.629-.258-.515-.365-.732-.419-1.004a2.376 2.376 0 0 1-.037-.289l.008.017a.25.25 0 1 0 .448-.224l-.235-.468ZM6.726 1.269c-1.167-.61-2.8-.142-3.454 1.135-.237.463-.36 1.08-.202 1.85.055.27.467.197.527-.071.285-1.256 1.177-2.462 2.989-2.528.234-.008.348-.278.14-.386Z"/>
+</svg>
+						New Collection
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+						</svg> Glasses
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+						</svg>  Wallets
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+						</svg> Bags
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+						</svg> Shoes
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-balloon-heart" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="m8 2.42-.717-.737c-1.13-1.161-3.243-.777-4.01.72-.35.685-.451 1.707.236 3.062C4.16 6.753 5.52 8.32 8 10.042c2.479-1.723 3.839-3.29 4.491-4.577.687-1.355.587-2.377.236-3.061-.767-1.498-2.88-1.882-4.01-.721L8 2.42Zm-.49 8.5c-10.78-7.44-3-13.155.359-10.063.045.041.089.084.132.129.043-.045.087-.088.132-.129 3.36-3.092 11.137 2.624.357 10.063l.235.468a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.235-.468ZM6.013 2.06c-.649-.18-1.483.083-1.85.798-.131.258-.245.689-.08 1.335.063.244.414.198.487-.043.21-.697.627-1.447 1.359-1.692.217-.073.304-.337.084-.398Z"/>
+						</svg> Jewellery
+					</button>
+				</div>
+
+				<div class="flex-w flex-c-m m-tb-10">
+					<div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
+						<i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
+						<i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+						 Filter
+					</div>
+
+					<div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
+						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
+						<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+						Search
+					</div>
+				</div>
+				
+				<!-- Search product -->
+				<div class="dis-none panel-search w-full p-t-10 p-b-15">
+					<div class="bor8 dis-flex p-l-15">
+						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
+							<i class="zmdi zmdi-search"></i>
+						</button>
+
+						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
+					</div>	
+				</div>
+
+				<!-- Filter -->
+				<div class="dis-none panel-filter w-full p-t-10">
+					<div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
+						<div class="filter-col1 p-r-15 p-b-27">
+							<div class="mtext-102 cl2 p-b-15">
+								Sort By
+							</div>
+
+							<ul>
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Default
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Popularity
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Average rating
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
+										Newness
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Price: Low to High
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										Price: High to Low
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="filter-col2 p-r-15 p-b-27">
+							<div class="mtext-102 cl2 p-b-15">
+								Price
+							</div>
+
+							<ul>
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
+										All
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$0.00 - $50.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$50.00 - $100.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$100.00 - $150.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$150.00 - $200.00
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<a href="#" class="filter-link stext-106 trans-04">
+										$200.00+
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="filter-col3 p-r-15 p-b-27">
+							<div class="mtext-102 cl2 p-b-15">
+								Category
+							</div>
+
+							<ul>
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: #222;">
+										<i class="zmdi zmdi-circle"></i>
+									</span>
+
+									<a href="#" class="filter-link stext-106 trans-04">
+										Black
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: #4272d7;">
+										<i class="zmdi zmdi-circle"></i>
+									</span>
+
+									<a href="#" class="filter-link stext-106 trans-04 filter-link-active">
+										Blue
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: #b3b3b3;">
+										<i class="zmdi zmdi-circle"></i>
+									</span>
+
+									<a href="#" class="filter-link stext-106 trans-04">
+										Grey
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: #00ad5f;">
+										<i class="zmdi zmdi-circle"></i>
+									</span>
+
+									<a href="#" class="filter-link stext-106 trans-04">
+										Green
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: #fa4251;">
+										<i class="zmdi zmdi-circle"></i>
+									</span>
+
+									<a href="#" class="filter-link stext-106 trans-04">
+										Red
+									</a>
+								</li>
+
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: #aaa;">
+										<i class="zmdi zmdi-circle-o"></i>
+									</span>
+
+									<a href="#" class="filter-link stext-106 trans-04">
+										White
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="filter-col4 p-b-27">
+							<div class="mtext-102 cl2 p-b-15">
+								Tags
+							</div>
+
+							<div class="flex-w p-t-4 m-r--5">
+								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+									Fashion
+								</a>
+
+								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+									Lifestyle
+								</a>
+
+								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+									Denim
+								</a>
+
+								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+									Streetstyle
+								</a>
+
+								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+									Crafts
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{% include 'store/parts/all_product.html'%}
+
+			
+
+
+
+		</div> 
+	</section>
+
+
+{% endblock %}
