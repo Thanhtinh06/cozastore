@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+7-l(2-%3c=(9ys#_cch28!mc-s47624$t&k=+-psz*0xg_b5x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['cozastore-thanhtinh.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -164,4 +164,4 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://cozastore-thanhtinh.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://cozastore-thanhtinh.herokuapp.com']
