@@ -13,9 +13,9 @@ def cart_detail(request):
     # Ma giam gia (Coupon)
 
     list_coupon = [
-        {'TTTH': 0.8},
-        {'TTINH': 0.9},
-        {'VOILUN': 0.7}
+        {'FLASHSALE': 0.8},
+        {'WEEKEND': 0.9},
+        {'SALE1010': 0.7}
     ]
 
     coupon_code = ''
