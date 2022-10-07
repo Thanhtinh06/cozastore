@@ -1,5 +1,6 @@
 from unicodedata import category
 from django.shortcuts import render
+from idna import alabel
 from store.models import Contact, Product, Status, Category
 from django.core.paginator import Paginator
 from cart.cart import Cart
@@ -78,15 +79,37 @@ def search_product(request):
     })
 
 
-def filter_product(request):
+def filter_product(request, pk):
     cart = Cart(request)
     all_product = Product.objects.all()
-    if request.GET.get('filter_new'):
-        all_product = Product.objects.order_by('-public_day')
+    if pk == 0:
+        # newness
+        if request.GET.get('filter_new'):
+            all_product = Product.objects.all().order_by('-public_day')
+        if request.GET.get('low_to_high'):
+            all_product = Product.objects.all().order_by('price_buy')
+        if request.GET.get('high_to_low'):
+            all_product = Product.objects.all().order_by('-price_buy')
+
+    else:
+        if request.GET.get('filter_new'):
+            all_product = Product.objects.filter(
+                category_id=pk).order_by('-public_day')
+        if request.GET.get('low_to_high'):
+            all_product = Product.objects.filter(
+                category_id=pk).order_by('price_buy')
+        if request.GET.get('high_to_low'):
+            all_product = Product.objects.filter(
+                category_id=pk).order_by('-price_buy')
+
+    category = Category.objects.all().order_by('name')
+    page = request.GET.get('page', 1)
+    paginator = Paginator(all_product, 20)
+    product_pager = paginator.page(page)
 
     return render(request, "store/product.html", {
         'cart': cart,
-        'all_product': all_product,
+        'all_product': product_pager,
 
     })
 
