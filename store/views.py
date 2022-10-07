@@ -64,16 +64,26 @@ def product(request, pk):
     })
 
 
-def search_product(request):
+def search_product(request, pk):
     cart = Cart(request)
     all_product = Product.objects.all()
-    if request.GET.get('search'):
-        search = request.GET.get('search')
-        all_product = Product.objects.filter(name__contains=search)
+    if pk == 0:
+        if request.GET.get('search'):
+            search = request.GET.get('search')
+            all_product = Product.objects.filter(name__contains=search)
+    else:
+        if request.GET.get('search'):
+            search = request.GET.get('search')
+            all_product = Product.objects.filter(
+                category_id=pk).filter(name__contains=search)
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(all_product, 20)
+    product_pager = paginator.page(page)
 
     return render(request, "store/product.html", {
         'cart': cart,
-        'all_product': all_product,
+        'all_product': product_pager,
         'search': search,
 
     })
