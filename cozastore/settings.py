@@ -165,3 +165,11 @@ REST_FRAMEWORK = {
 }
 
 CSRF_TRUSTED_ORIGINS = ['https://cozastore-thanhtinh.herokuapp.com']
+
+# Email
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gamil.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "nguyenthithanhtinh06@gmail.com"
+EMAIL_HOST_PASSWORD = "fggnuaqmyreyrrpy"

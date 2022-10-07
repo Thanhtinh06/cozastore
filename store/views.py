@@ -8,6 +8,8 @@ from store.views import Cart
 from rest_framework import viewsets, permissions
 from store.serializers import ProductSerializer
 from django.http import JsonResponse
+from cozastore.settings import EMAIL_HOST_USER
+from django.core.mail import send_mail, EmailMultiAlternatives
 # Create your views here.
 
 
@@ -165,6 +167,16 @@ def contact(request):
                 You have successfully sent messege!
             </div>
             '''
+    # Gui mail
+        # message += "\nTest send mail from MyNews website"
+        # send_mail(message, email, EMAIL_HOST_USER,
+        #           [email, 'tinhntt.98@gmail.com'])
+
+        # message += "<br/><b>Test send mail from MyNews website</b>"
+        # msg = EmailMultiAlternatives(message, EMAIL_HOST_USER, [
+        #     email, 'tinhntt.98@gmail.com'])
+        # msg.attach_alternative(message, 'text/html')
+        # msg.send()
 
     return render(request, "store/contact.html", {
         'cart': cart,
