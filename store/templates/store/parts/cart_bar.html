@@ -20,10 +20,12 @@
 				<ul class="header-cart-wrapitem w-full">
 					<li class="header-cart-item flex-w flex-t m-b-12">
 						<div class="header-cart-item-img">
+							<a href="{% url 'store:product_detail' c.product.id %}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 							<img src="{{c.product.image.url}}" alt="{{c.product.name}}">
+							</a>
 						</div>
 						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+							<a href="{% url 'store:product_detail' c.product.id %}" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
 								{{c.product.name}}
 							</a>
 							<span class="header-cart-item-info">

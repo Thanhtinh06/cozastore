@@ -66,7 +66,6 @@ def cart_detail(request):
         for c in cart:
             quantity_new = int(request.POST.get(
                 'quantity2' + str(c['product'].pk)))
-            print(quantity_new)
 
             if quantity_new != 0:
                 product_cart = {
